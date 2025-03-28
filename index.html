@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <style>
+        .card {
+            display: flex;
+            gap: 20px;
+            max-width: 50%;
+            align-items: center;
+        }
+
+        .card-body {
+            max-width: 66%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">   
+        <div class="header">
+        </div>
+        <div class="article">
+            <h2 id="title">Service Team</h2>
+        </div>
+        <div class="footer">
+            <div class="card">
+                <div class="circle" id="textb">
+                    ZZpg
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="subtitle"><br>Card tittle </h5>
+                    <p class="card-text" id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Numquam, ea quaerat
+                        repudiandae facere fugiat inventore dignissimos adipisci.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="circle" id="textb1">
+                    ZZpg
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="subtitle1">Cards Tittles</h5>
+                    <p class="card-text" id="parrafo1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, reprehenderit.</p>
+                </div>
+            </div>
+          
+
+        </div>
+        
+
+    </div>
+
+    <script>
+        fetch(
+            "https://gist.githubusercontent.com/IsabelRuiz013/0e07ead1d9853a3d56d9c8e5434d1edc/raw/2e2a89e4b6aed4f8a0c2843ba0b2741ec6e6e6a9/Isa.json"
+        )
+        .then((res)=>res.json())
+        .then((res)=>{
+            console.log(res)
+            console.log(res.title)
+            document.getElementById("title").textContent = res.title;
+            console.log(res.title)
+            document.getElementById("textb").textContent = res.textb;
+            console.log(res.textb)
+            document.getElementById("subtitle").textContent = res.subtitle;
+            console.log(res.subtitle)
+            document.getElementById("parrafo").textContent = res.parrafo;
+            console.log(res.parrafo)
+        })
+        .catch((e)=>{console.log(e)})
+    </script>
+</body>
+
+</html>
